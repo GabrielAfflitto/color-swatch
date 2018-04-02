@@ -97,6 +97,10 @@ var getColors = function getColors() {
   var uniqueText = Array.from(new Set(text));
   var allColors = Object.keys(_colors2.default);
   postColors(text, allColors);
+  appendSwatches(uniqueText, allColors);
+};
+
+var appendSwatches = function appendSwatches(uniqueText, allColors) {
   uniqueText.forEach(function (color) {
     if (allColors.includes(color)) {
       $('article.colorized-text').append('<div class="swatch" style="background-color:' + _colors2.default[color] + ';"></div>');
